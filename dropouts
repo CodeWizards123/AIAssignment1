@@ -1,0 +1,31 @@
+digraph "DropOutPredictor" {
+  graph [bgcolor=transparent,label="DropOutPredictor"];
+  node [style=filled fillcolor="#ffffaa"];
+
+"School Performance" [comment="0:school_performance{low|medium|high}"];
+"Academic Performance" [comment="1:academic_performance{low|medium|high}"];
+"Attendance" [comment="2:attendance{low|medium|high}"];
+"Family Support" [comment="3:family_support{low|medium|high}"];
+"Home environment" [comment="4:family_support{low|medium|high}"];
+"Parental Support" [comment="5:parental_support{low|medium|high}"];
+"Financial Support" [comment="6:financial_support{low|medium|high}"];
+"Government Support" [comment="7:government_support{low|high}"];
+"Social Support" [comment="8:social_support{low|medium|high}"];
+"Likelihood of Dropout" [comment="9:likelihood_of_dropout{low|medium|high}"];
+"Age" [comment="10:age{12|13|14|15|16|17}"];
+"Race" [comment="11:race{black|white|asian|hespanic|others}"];
+"Income" [comment="12:income{low|medium|high}"];
+
+  "School Performance" -> "Likelihood of Dropout";
+  "Academic Performance" -> "School Performance";
+  "Attendance" -> "School Performance";
+  "Family Support" -> "Likelihood of Dropout";
+  "Home environment" -> "Family Support";
+  "Parental Support" -> "Family Support";
+  "Financial Support" -> "Likelihood of Dropout";
+  "Government Support" -> "Financial Support";
+  "Social Support" -> "Likelihood of Dropout";
+  "Age" -> "Home environment";
+  "Race" -> "Home environment";
+  "Income" -> "Financial Support";
+}
