@@ -5,6 +5,13 @@
 
 <!-- Variables -->
 <VARIABLE TYPE="decision">
+	<NAME>TutorSupport</NAME>
+	<PROPERTY>tutor_support</PROPERTY>
+	<OUTCOME>no</OUTCOME>
+	<OUTCOME>yes</OUTCOME>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
 	<NAME>GovernmentSupport</NAME>
 	<PROPERTY>government_support</PROPERTY>
 	<OUTCOME>no</OUTCOME>
@@ -72,28 +79,27 @@
 </VARIABLE>
 
 <VARIABLE TYPE="utility">
-	<NAME>GrantApplicability</NAME>
-	<PROPERTY>grant_applicability</PROPERTY>
-	<OUTCOME>0</OUTCOME>
-</VARIABLE>
-
-<VARIABLE TYPE="utility">
-	<NAME>TutorSupport</NAME>
-	<PROPERTY>tutor_support</PROPERTY>
+	<NAME>TutorNeeded</NAME>
+	<PROPERTY>tutor_needed</PROPERTY>
 	<OUTCOME>0</OUTCOME>
 </VARIABLE>
 
 <!-- Probability distributions -->
 <DEFINITION>
+	<FOR>GovernmentSupport</FOR>
+	<TABLE>0.92 0.08 </TABLE>
+</DEFINITION>
+<DEFINITION>
 	<FOR>SchoolMotivation</FOR>
-	<GIVEN>AcademicPerformance</GIVEN>
 	<GIVEN>Attendance</GIVEN>
+	<GIVEN>AcademicPerformance</GIVEN>
 	<TABLE>1 0 0 0.4 0.5 0.1 0.1 0.675 0.225 0.6 0.15 0.25 0.2 0.525 0.275 0.05 0.8 0.15 </TABLE>
 </DEFINITION>
 <DEFINITION>
 	<FOR>AcademicPerformance</FOR>
+	<GIVEN>TutorSupport</GIVEN>
 	<GIVEN>Internet</GIVEN>
-	<TABLE>0.75 0.2 0.05 0.05 0.75 0.2 </TABLE>
+	<TABLE>0.65 0.3 0.05 0.35 0.55 0.1 0.2 0.5 0.3 0.05 0.65 0.3 </TABLE>
 </DEFINITION>
 <DEFINITION>
 	<FOR>Attendance</FOR>
@@ -105,7 +111,7 @@
 </DEFINITION>
 <DEFINITION>
 	<FOR>Internet</FOR>
-	<TABLE>0.3 0.7 </TABLE>
+	<TABLE>0.9 0.1 </TABLE>
 </DEFINITION>
 <DEFINITION>
 	<FOR>FamilyIncome</FOR>
@@ -113,28 +119,22 @@
 </DEFINITION>
 <DEFINITION>
 	<FOR>FinancialSupport</FOR>
-	<GIVEN>GovernmentSupport</GIVEN>
 	<GIVEN>FamilyIncome</GIVEN>
-	<TABLE>1 0 0.35 0.65 0.2 0.8 0.1 9 0.05 0.95 0 1 </TABLE>
+	<GIVEN>GovernmentSupport</GIVEN>
+	<TABLE>1 0 0.35 0.65 0.2 0.8 0.1 0.9 0.05 0.95 0 1 </TABLE>
 </DEFINITION>
 <DEFINITION>
 	<FOR>LikelihoodOfDropout</FOR>
-	<GIVEN>FinancialSupport</GIVEN>
 	<GIVEN>FamilySupport</GIVEN>
 	<GIVEN>SchoolMotivation</GIVEN>
+	<GIVEN>FinancialSupport</GIVEN>
 	<TABLE>0 0.45 0.55 0.1 0.5 0.4 0.425 0.325 0.25 0.4 0.475 0.125 0.6 0.3 0.1 0.75 0.155 0.095 0.2 0.5 0.3 0.35 0.5 0.15 0.575 0.325 0.1 0.725 0.225 0.05 0.8 0.15 0.05 0.9 0.08 0.02 </TABLE>
 </DEFINITION>
 <DEFINITION>
-	<FOR>GrantApplicability</FOR>
-	<GIVEN>GovernmentSupport</GIVEN>
+	<FOR>TutorNeeded</FOR>
+	<GIVEN>TutorSupport</GIVEN>
 	<GIVEN>LikelihoodOfDropout</GIVEN>
 	<TABLE>20 18 10 8 0 -2 </TABLE>
-</DEFINITION>
-<DEFINITION>
-	<FOR>TutorSupport</FOR>
-	<GIVEN>AcademicPerformance</GIVEN>
-	<GIVEN>LikelihoodOfDropout</GIVEN>
-	<TABLE>20 16 0 12 6 0 0 -3 0 </TABLE>
 </DEFINITION>
 
 </NETWORK>
