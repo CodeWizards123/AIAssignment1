@@ -133,8 +133,9 @@
 <DEFINITION>
 	<FOR>SchoolWorkshopNeeded</FOR>
 	<GIVEN>SchoolWorkShop</GIVEN>
+	<GIVEN>FamilyIncome</GIVEN>
 	<GIVEN>LikelihoodOfDropout</GIVEN>
-	<TABLE>20 18 10 8 0 -2 </TABLE>
+	<TABLE>20 18 10 8 0 -2 10 8 0 -2 -10 -12 0 -2 -10 -12 -20 -22 </TABLE>
 </DEFINITION>
 
 </NETWORK>
