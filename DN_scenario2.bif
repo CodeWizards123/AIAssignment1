@@ -1,0 +1,142 @@
+<?xml version="1.0" ?>
+
+<BIF VERSION="0.3">
+<NETWORK>
+
+<!-- Variables -->
+<VARIABLE TYPE="decision">
+	<NAME>SchoolWorkShop</NAME>
+	<PROPERTY>school_work_shop</PROPERTY>
+	<OUTCOME>no</OUTCOME>
+	<OUTCOME>yes</OUTCOME>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>GovernmentSupport</NAME>
+	<PROPERTY>government_support</PROPERTY>
+	<OUTCOME>no</OUTCOME>
+	<OUTCOME>yes</OUTCOME>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>SchoolMotivation</NAME>
+	<PROPERTY>schoolmotivation</PROPERTY>
+	<OUTCOME>low</OUTCOME>
+	<OUTCOME>medium</OUTCOME>
+	<OUTCOME>high</OUTCOME>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>AcademicPerformance</NAME>
+	<PROPERTY>academic_performance</PROPERTY>
+	<OUTCOME>0-50</OUTCOME>
+	<OUTCOME>50-60</OUTCOME>
+	<OUTCOME>70-100</OUTCOME>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Attendance</NAME>
+	<PROPERTY>attendance</PROPERTY>
+	<OUTCOME>low</OUTCOME>
+	<OUTCOME>high</OUTCOME>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>FamilySupport</NAME>
+	<PROPERTY>family_support</PROPERTY>
+	<OUTCOME>no</OUTCOME>
+	<OUTCOME>yes</OUTCOME>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Internet</NAME>
+	<PROPERTY>internet</PROPERTY>
+	<OUTCOME>no</OUTCOME>
+	<OUTCOME>yes</OUTCOME>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>FamilyIncome</NAME>
+	<PROPERTY>family_income</PROPERTY>
+	<OUTCOME>0-350000</OUTCOME>
+	<OUTCOME>350001-700000</OUTCOME>
+	<OUTCOME>700000+</OUTCOME>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>FinancialSupport</NAME>
+	<PROPERTY>financial_support</PROPERTY>
+	<OUTCOME>no</OUTCOME>
+	<OUTCOME>yes</OUTCOME>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>LikelihoodOfDropout</NAME>
+	<PROPERTY>likelihood_of_dropout</PROPERTY>
+	<OUTCOME>low</OUTCOME>
+	<OUTCOME>medium</OUTCOME>
+	<OUTCOME>high</OUTCOME>
+</VARIABLE>
+
+<VARIABLE TYPE="utility">
+	<NAME>SchoolWorkshopNeeded</NAME>
+	<PROPERTY>school_workshop_needed</PROPERTY>
+	<OUTCOME>0</OUTCOME>
+</VARIABLE>
+
+<!-- Probability distributions -->
+<DEFINITION>
+	<FOR>GovernmentSupport</FOR>
+	<TABLE>0.92 0.08 </TABLE>
+</DEFINITION>
+<DEFINITION>
+	<FOR>SchoolMotivation</FOR>
+	<GIVEN>Attendance</GIVEN>
+	<GIVEN>AcademicPerformance</GIVEN>
+	<TABLE>1 0 0 0.4 0.5 0.1 0.1 0.675 0.225 0.6 0.15 0.25 0.2 0.525 0.275 0.05 0.8 0.15 </TABLE>
+</DEFINITION>
+<DEFINITION>
+	<FOR>AcademicPerformance</FOR>
+	<GIVEN>SchoolWorkShop</GIVEN>
+	<GIVEN>Internet</GIVEN>
+	<TABLE>0.85 0.1 0.05 0.5 0.25 0.1 0.1 0.4 0.5 0.05 0.55 0.4 </TABLE>
+</DEFINITION>
+<DEFINITION>
+	<FOR>Attendance</FOR>
+	<TABLE>0.1 0.9 </TABLE>
+</DEFINITION>
+<DEFINITION>
+	<FOR>FamilySupport</FOR>
+	<TABLE>0.33 0.67 </TABLE>
+</DEFINITION>
+<DEFINITION>
+	<FOR>Internet</FOR>
+	<TABLE>0.9 0.1 </TABLE>
+</DEFINITION>
+<DEFINITION>
+	<FOR>FamilyIncome</FOR>
+	<TABLE>0.3 0.4 0.2 </TABLE>
+</DEFINITION>
+<DEFINITION>
+	<FOR>FinancialSupport</FOR>
+	<GIVEN>FamilyIncome</GIVEN>
+	<GIVEN>GovernmentSupport</GIVEN>
+	<TABLE>1 0 0.35 0.65 0.2 0.8 0.1 0.9 0.05 0.95 0 1 </TABLE>
+</DEFINITION>
+<DEFINITION>
+	<FOR>LikelihoodOfDropout</FOR>
+	<GIVEN>FamilySupport</GIVEN>
+	<GIVEN>SchoolMotivation</GIVEN>
+	<GIVEN>FinancialSupport</GIVEN>
+	<TABLE>0 0.45 0.55 0.1 0.5 0.4 0.425 0.325 0.25 0.4 0.475 0.125 0.6 0.3 0.1 0.75 0.155 0.095 0.2 0.5 0.3 0.35 0.5 0.15 0.575 0.325 0.1 0.725 0.225 0.05 0.8 0.15 0.05 0.9 0.08 0.02 </TABLE>
+</DEFINITION>
+<DEFINITION>
+	<FOR>SchoolWorkshopNeeded</FOR>
+	<GIVEN>SchoolWorkShop</GIVEN>
+	<GIVEN>FamilyIncome</GIVEN>
+	<GIVEN>LikelihoodOfDropout</GIVEN>
+	<TABLE>20 18 10 8 0 -2 10 8 0 -2 -10 -12 0 -2 -10 -12 -20 -22 </TABLE>
+</DEFINITION>
+
+</NETWORK>
+</BIF>
