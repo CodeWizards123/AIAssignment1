@@ -1,0 +1,217 @@
+% This is the file where the citations are stored
+
+@misc{r1,
+    author ={Marecia, Damons},
+    title = {As Many As 750,000 Children Have Dropped Out of School During the Pandemic}, 
+    year ={2021},
+    url = {https://www.news24.com/life/archive/as-many-as-750000-children-have-dropped-out-of-school-during-the-pandemic-20210715},
+    note = {Accessed : 2023-05-27}
+}
+
+
+@survey{r2,
+title = {The Impact of COVID-19 in Education - More Than a Year of Disruption},
+url = {https://cramsurvey.org/wp-content/uploads/2021/07/11.-Shepherd-D-_-Mohohlwane-N.-2021.-Changes-in-education-A-reflection-on-COVID-19-effects-over-a-year.pdf},
+author = {Shepherd, Debra and
+Mohohlwane, Nompumelelo},
+year = {2021},
+month = {July}
+}
+
+@misc{r3,
+    author ={{Department of Basic Education}},
+    title = {The COVID-19 Pandemic, Enrolments, Dropping Out and Attendance Explained}, 
+    year ={2022},
+    url = {https://www.education.gov.za/Portals/0/Documents/Report},
+    note = {Accessed : 2023-05-28}
+}
+
+@misc{r4,
+    author ={{Department of Basic Education}},
+    title = {LEARNER PROGRESS AND ACHIEVEMENT STUDY}, 
+    year ={1998},
+    url = {https://www.education.gov.za/Portals/0/Documents/Reports/Research},
+    note = {Accessed : 2023-05-30}
+}
+
+@misc{r5,
+    author ={{National Education Evaluation & Devlopment Unit}},
+    title = {Building a Bridge Between School And Home:
+    a Sample of Best Practices How To Improve Parental Involvement In Schools}, 
+    year ={2018},
+    url = {https://www.education.gov.za/Portals/0/Documents/Publications/NEEDU},
+    note = {Accessed : 2023-06-01}
+}
+
+@misc{r6,
+    author ={{Department of Basic Education}},
+    title = {Family Influences on Early Grade Reading}, 
+    year ={2017},
+    url = {https://www.education.gov.za/Portals/0/Documents/Reports/EGRS},
+    note = {Accessed : 2023-06-02}
+}
+
+@misc{r7,
+    author ={{Department of Basic Education}},
+    title = {Update on the Review of the Policy on Home Education}, 
+    year ={2022},
+    url = {https://www.education.gov.za/ArchivedDocuments/ArchivedArticles/UpdateontheReviewofthePolicyonHomeEducation.aspx},
+    note = {Accessed : 2023-06-02}
+}
+
+@misc{r8,
+    author ={{Department of Basic Education}},
+    title = {Update on the Review of the Policy on Home Education}, 
+    year ={2022},
+    url = {https://www.academia.edu/43996683/Factors_That_Influence_High_Rate_of_School_Drop_out_at_Junior_High_Level},
+    note = {Accessed : 2023-06-02}
+}
+
+@misc{r9,
+    author ={Hall, Kathleen},
+    title = {{Statistics on Children in South Africa} : School Attendance}, 
+    year ={2022},
+    url = {http://childrencount.uct.ac.za/indicator},
+    note = {Accessed : 2023-06-03}
+    }
+
+@misc{r10,
+    author ={{Think Impact}},
+    title = {Scholarship Statistics}, 
+    year ={2021},
+    url = {https://www.thinkimpact.com/scholarship-statistics/},
+    note = {Accessed : 2023-06-03}
+    }
+
+
+@misc{r11,
+    author ={{Stats SA}},
+    title = {Families and Parents are the Key to Well-Being of Children }, 
+    year ={2019},
+    url = {https://www.statssa.gov.za/?p=14388},
+    note = {Accessed : 2023-06-04}
+}
+
+@article{r12,
+author = {Reddy, Vijay and Berg, Servaas and Janse, Dean and Janse van Rensburg, Dean and Taylor, Stephen},
+year = {2011},
+month = {12},
+pages = {},
+title = {Educational Outcomes: Pathways and Performance in South African High Schools},
+volume = {108},
+journal = {South African Journal of Science},
+doi = {10.4102/sajs.v108i3/4.620}
+}
+
+@misc{r13,
+    author ={{Business Tech}},
+    title = {2022 Matric Pass Rate Climbs to 80.1\% in South Africa}, 
+    year ={2019},
+    url = {https://businesstech.co.za/news/government/657769/2022-matric-pass-rate-climbs-to-80-1-in-south-africa/},
+    note = {Accessed : 2023-06-04}
+}
+
+@article{r14,
+author = {Abdulhameed Rakan Alenezi},
+year = {2022},
+title = {Modeling the Social Factors Affecting Students’ Satisfaction with Online Learning: A Structural Equation Modeling Approach},
+journal = {Education Research International},
+doi = {https://doi.org/10.1155/2022/2594221}
+}
+
+@article{r15,
+author = {Sakar, Can},
+year = {2021},
+month = {01},
+pages = {12-21},
+title = {Educational and Sociological Factors Influencing Students' Academic Achievements: The United States of America Example},
+volume = {1}
+}
+
+@article{r16,
+author = {Balfanz, R., & Byrnes, V.},
+year = {2012},
+title = {The Importance of Being in School: A Report on Absenteeism in the Nation's Public Schools},
+}
+
+@misc{r17,
+    author ={{Stats SA}},
+    title = {General Household Survey}, 
+    year ={2016},
+    url = {https://www.statssa.gov.za/publications/P0318/P03182016.pdf},
+    note = {Accessed : 2023-06-06}
+}
+
+@misc{r18,
+    author ={{SA-Tied}},
+    title = {Extreme Inequalities: The distribution of household wealth in South Africa}, 
+    year ={2020},
+    url = {https://sa-tied-archive.wider.unu.edu/article/extreme-inequalities-distribution-household-wealth-south-africa},
+    note = {Accessed : 2023-06-07}
+}
+
+@misc{r19,
+    author ={{World Bank}},
+    title = {South Africa : Income}, 
+    year ={2023},
+    url = {https://data.worldbank.org/country/ZA},
+    note = {Accessed : 2023-06-08}
+}
+
+@article{r20,
+author = {Covington, Martin V.},
+title = {Goal Theory, Motivation, and School Achievement: An Integrative Review},
+journal = {Annual Review of Psychology},
+volume = {51},
+number = {1},
+pages = {171-200},
+year = {2000},
+doi = {10.1146/annurev.psych.51.1.171},
+    note ={PMID: 10751969},
+URL = { 
+        https://doi.org/10.1146/annurev.psych.51.1.171
+},
+eprint = { 
+        https://doi.org/10.1146/annurev.psych.51.1.171
+}
+}
+
+@Inbook{r21,
+author="Rumberger, Russell W.
+and Rotermund, Susan",
+editor="Christenson, Sandra L.
+and Reschly, Amy L.
+and Wylie, Cathy",
+title="The Relationship Between Engagement and High School Dropout",
+bookTitle="Handbook of Research on Student Engagement",
+year="2012",
+publisher="Springer US",
+address="Boston, MA",
+pages="491--513",
+
+isbn="978-1-4614-2018-7",
+doi="10.1007/978-1-4614-2018-7_24",
+url="https://doi.org/10.1007/978-1-4614-2018-7_24"
+}
+
+@article{r22, title={Factors Affecting Students’ Decision to Drop Out of School}, volume={2}, url={https://rpo.cjc.edu.ph/index.php/slongan/article/view/4}, number={1}, journal={SLONGAN}, author={Orion, Hermogenes C. and Forosuelo, Erikka June D. and Cavalida, Jean M.}, year={2014}, month={Aug.}, pages={16} }
+
+
+ @misc{r23, title={Do Extra Classes Improve Cognitive Test Scores }, url={https://blackwells.co.uk/bookshop/product/Do-Extra-Classes-Improve-Cognitive-Test-Scores-by-Thuc-Duc-Le-Bob-Baulch-Young-Lives-Project/9781904427995}, author={Duc, Le Thuc}, year={2012}, month={Dec.} } 
+
+ @misc{r24,
+    author = "American Psychological Association",
+    title = "Parent Engagement in Schools",
+    howpublished = "\url{https://www.apa.org/pi/lgbt/programs/safe-supportive/parental-engagement/default.aspx}",
+    year = "n.d."
+}
+
+@article{r25,
+  title={Analysis of Parental Involvement and Self-Esteem on Secondary School Students in Kieni West Sub-County, Nyeri County, Kenya},
+  author={Wairimu, M J and Macharia, S M and Muiru, A},
+  journal={Journal of Education and Practice},
+  volume={7},
+  pages={82--98},
+  year={2016},
+  month={November}
+}

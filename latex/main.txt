@@ -1,0 +1,239 @@
+\documentclass[sigconf]{acmart}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[hidelinks]{hyperref} 
+\usepackage{comment}
+
+\settopmatter{printacmref=false}
+\setcopyright{none}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\pagestyle{plain}
+\usepackage[margin=20mm]{geometry}
+\usepackage{tabularx}
+
+\documentclass[16pt]
+
+\title{Bayesian Network report}
+\subtitle{CSC4025Z : Artificial Intelligence}
+\author{Hamza Amir}
+\email{amrham001@myuct.ac.za}
+\affiliation{%
+  \institution{University Of Cape Town}
+  \city{Cape Town}
+  \country{South Africa}
+}
+\author{Adeeb Gaibie}
+\email{gbxade002@myuct.ac.za}
+\affiliation{%
+  \institution{University Of Cape Town}
+  \city{Cape Town}
+  \country{South Africa}
+}
+\author{Dennis Hammerschlag}
+\email{hmmden001@myuct.ac.za}
+\affiliation{%
+  \institution{University Of Cape Town}
+  \city{Cape Town}
+  \country{South Africa}
+}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+The number of students failing to complete their secondary education in South Africa is extremely high. Certain students are much more vulnerable to dropping out due to external factors such as poverty or lack of family support. By reviewing the literature, it was found that these factors have all interacting effects on each other, dropout predictions a complex task. Being able to predict a student’s likelihood of dropout can be extremely useful for many applications such as providing vulnerable students support before it is too late. \par
+
+In this project, we aim to develop a Bayesian network to predict the likelihood of a student dropping out of school. Bayesian networks are a type of probabilistic graphical model that can represent uncertain relationships between nodes. By using a Bayesian network, we can model the dependencies between the various factors that contribute to a student dropping out of school. \par
+
+There are a number of extra lesson initiatives around South Africa aimed to help vulnerable students. Our second part of the project involves building a tool/decision network that will be used by school professionals and policy makers to determine:
+
+\begin{itemize}
+    \item whether the student needs extra school workshops
+\end{itemize}
+
+that subsequently brings about more students graduating with the reduction in the high school dropout rate for students. \par
+
+This project can have significant implications for education policymakers and researchers interested in understanding the factors that contribute to students dropping out of school. \par
+
+
+\section{Problem analysis}
+\begin{comment}
+• Describe the potential factors to considered
+• Describe the data sets and expert knowledge used (support by references)
+\end{comment}
+
+
+The problem of children dropping out of school is a significant issue that has far-reaching consequences for both individuals and society and it has been aggravated since the Covid-19 pandemic. According to News24, the pandemic may have caused three times as many students to drop out of school, with around 750,000 learners having left school in May 2021, compared to an expected 230,000 pre-pandemic. {\cite{r1}}
+
+We consulted an educational professional who has been actively involved in non-profit educational workshops over the past few decades. Additionally, high school teachers were also contacted in terms of obtaining more knowledge. In addition to utilizing expert knowledge; multiple studies, including ones specific to South Africa, were used to build the Bayesian network. 
+
+\begin{comment}
+Further we used a dataset consisting of multiple dropout factors to help compute the probabilities for certain decision nodes. (could add)
+\end{comment}
+
+We identified main factors that contribute to dropout rates including (but not limited to) school motivation \cite{r20}, family support \cite{r21}, financial support \cite{r22}. The identification of students who are at risk of dropping out is crucial for schools to intervene and prevent this outcome. Therefore, the development of effective tools, such as Bayesian networks, to predict the likelihood of a student dropping out of school is of great importance.
+
+\subsection{School Motivation Factors}
+Attendance, academic performance and home internet access are significant predictors of student dropout rates. Whilst this is just one aspect of a student's livelihood, it plays a major role in the likelihood of students dropping out. Some data from \cite{r16} provides insights on the relation between attendance and academic performance on school motivation as a whole. Stats SA also evidently has good data in this area.
+
+\subsubsection{Attendance}
+Attendance is a critical factor that affects the likelihood of a student dropping out as it reflects their engagement and commitment to their education. Regular attendance indicates active participation in learning and better understanding of the course material, while also providing opportunities for peer interaction and support from instructors. Learning losses due to reduced attendance of students is currently a major challenge for the schooling system, which will require long-term, concerted efforts to rectify. \cite{r3} 
+Statistics on children in South Africa has relevant statistics on attendance that are utilised in this model. \cite{r9}
+
+\subsubsection{Academic Performance}
+Academic performance has evidently been seen to be negatively linked to the likelihood of a student dropping out. \cite{r4}
+The better a student performs in their curriculum system, the less pressure they feel academically which in turn doesn't make them feel pressurized negatively enough to want to drop out. Academic performance amongst South African high-schools are generally not the best \cite{r12}. But the pass rate for 2022 was celebrated to be 80\% by the Department of Education \cite{r13}. Whilst no exact data for academic performance in South Africa is available, from the aforementioned data-sets, we can get a brief understanding of the overall distribution of it. Further, academic performance can be improved with the help of extra classes. A study into the effectiveness of extra classes provides statistics about their efficacy.\cite{r23} 
+
+\subsubsection{Internet}
+Internet access is crucial for a student's motivation in school. Without it, they may lack access to valuable educational resources, including online textbooks, research articles, and interactive learning platforms. Furthermore, limited communication with teachers and peers due to a lack of internet access can result in disengagement from the learning process. Overall, not having internet access can be a significant obstacle to academic success.
+According to the General Household Survey conducted in 2016 (\cite{r17}, it has been evident that around 60\% of South African households had at least one member of the family who had access to or used the Internet either at home, work, place of study or at cafes. But only roughly 10\% had access to the internet at home.
+
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{BNModel.png}
+  \caption{Bayesian Network Model - "SchoolWorkShop" is a decision node in the Decision  Network but modelled as a uniform random variable in the Bayesian Network as it affects Academic Performance.}
+  \label{fig:Figure 1}
+\end{figure*}
+
+\subsection{Family Support Factors}
+Family support factors are instrumental in shaping a student's academic trajectory \cite{r24}, serving as a vital pillar of support during times of academic hardship. These include parental support and the state of the student's home environment. When families support you, you can help students develop their motivation and self-confidence in the classroom \cite{r25}.
+
+Parents/guardians tend to be students' first point of contact when they need assistance diagnosing and troubleshooting the vast majority of their errors in their subjects. Parental involvement is crucial in mitigating the risk of dropping out. \cite{r5} Active participation in school activities, such as parent-teacher conferences and volunteering, conveys the significance and value of education to the child.  \cite{r6}
+
+Challenging home environments, including poverty, unstable housing, domestic violence, and substance abuse, can create stress and chaos for students, hindering their ability to focus on academics, leading to frequent absences, falling behind, and ultimately, dropping out. A student's home environment has to be conducive for learning in order to aid them in the learning process and reduce the likelihood of them dropping out. \cite{r7} The General Household survey conducted in 2019 by Stats SA has good data on the nature of households that students find themselves in. \cite{r11}
+
+\subsection{Financial Support Factors}
+Financial support plays a critical role in reducing the probability of a student dropping out. Insufficient financial resources can pose a myriad of challenges, including difficulty in affording basic school supplies, transportation costs, and living expenses. Additionally, financial strain may force students to take up part-time jobs or other responsibilities, thereby impeding their focus on academic pursuits. Conversely, financial aid in the form of scholarships, grants, and other forms of assistance can ease the burden of these challenges and enable students to fully immerse themselves in their education, thereby mitigating the risk of dropping out.
+
+\subsubsection{Government Support}
+The extent to which a student can receive financially government support depends on the government's policy regarding student funding and the requirements therein. Usually government funding for secondary students is less than what it would be for tertiary education.
+Think Impact has good statistics about funding for students. \cite{r10}
+
+\subsubsection{Family Incomes}
+Family incomes can have a significant impact on a student's likelihood of dropping out of school. Students from low-income families are at a higher risk of dropping out due to financial difficulties, including the need to work or help support their families. These students may also lack access to resources that could help them succeed academically, such as tutoring or technology. Additionally, students from low-income families may be more likely to attend underfunded schools with fewer resources, which can further hinder their academic success and motivation to stay in school. The wealth disparity seen in South Africa is one of the largest in the world, and data of that can be seen here \cite{r18} or at the World Bank. \cite{r19}
+
+
+\section{Decision Network model}
+\begin{comment}
+• Provide a diagram of your final model (you can generate a diagram with pyAgrum)
+• Explain how and why you arrived at this particular structure and weights
+• For complex models comprehensive probability tables are not necessary for the
+report
+\end{comment}
+
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{DNModel.png}
+  \caption{This shows the Decision Network Model, where the grey, red, and blue nodes represent chance, decision, and utility nodes, respectively.}
+  \label{fig:Figure 2}
+\end{figure*}
+
+
+\begin{figure*}[h]
+  \centering
+  \includegraphics[width=\textwidth]{PosteriorProbab.BN.png}
+  \caption{Posterior Probabilities for our Bayesian Network}
+  \label{fig:Figure 3}
+\end{figure*}
+
+Drawing upon insights from our educational professional and our extensive research into the key factors outlined in the preceding section, we have formulated a Bayesian structure, as depicted in Figure 1 before. Subsequently the decision network can be seen in Figure 2 above.
+As mentioned previously from various data sources in alignment with the advice received from educational professionals, academic performance of students is pivotal to their likelihood of dropping out. Educational professionals usually take the stance of allowing access to school workshops for all, but what's needed is to be able to target specific academically-deficient performing student groups that need it the most. \par
+Thus, we have decided to include the utility node denoted as "SchoolWorkShopNeeded” which measures a student`s applicability for attending these non-profit workshops.
+Factors influencing a student’s applicability to attend these workshop are as follows:
+
+
+\subsection{Family income}
+The non-profit workshops are primarily aimed in helping the underprivileged. Therefore, the student`s family income needs to be considered as ideally students from lower income households should have a higher preference for attending these workshops. Therefore the utility on lower income households is weighted higher.
+
+\subsection{Dropout likelihood}
+These workshops have the goal of lowering dropout rates. Therefore, students with that are more vulnerable to dropping out are more applicable for attending the workshops. Thus, the utility is weighted higher for students more vulnerable to dropping out.
+
+\subsection{Workshop}
+As there is a limited amount of resources, such as voluntary teachers available, not everyone can attend these workshops. Therefore to account for this, attending the workshop itself is negatively weighted against the utility. This stops the network from recommending the workshop to everyone. \par
+
+\vspace{5mm}
+
+The factors mentioned above all influence the utility, however weightings of each factor need to be considered. There is no concrete data values on how each factor should be weighed. With consultation with our educational professional, we were able to gauge which factors are most important. It was deduced that the workshops would favour towards having underprivileged students with higher grades over a privileged student with lower grades. However, it was also noted that workshops should also still cater for vulnerable students from middle class households. From this insights we adjust the weightings accordingly by weighting the family income factor higher the dropout likelihood factor, while ensuring that middle class families are still applicable for the workshops.
+
+
+\section{Model testing and evaluation}
+\begin{comment}
+• First show how the Bayesian network can be used to make inferences about events represented by unobserved random variables.
+• Then show how it can be applied as a decision network to achieve the objective defined in section 1
+• Show the efficacy and usefulness of your model in one or more use case scenarios
+\end{comment}
+
+Utilizing the Bayesian Network depicted in Figure 1, it is possible to perform inference in the absence of evidence by leveraging the posterior probabilities that are illustrated in Figure 3. Additionally, the decision networks can be employed in a similar fashion, as demonstrated in the following use cases:
+
+\vspace{5mm}
+\textbf{Case 1 - Scenario 0}
+
+% \begin{figure*}[t]
+%   \centering
+%   \includegraphics[width=\textwidth] {Scenario0.png}
+%   \caption{Scenario 0 with no evidence applied.}
+%   \label{fig:Figure 4}
+% \end{figure*}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\columnwidth] {Scenario0.png}
+  \caption{Scenario 0 with no evidence applied.}
+  \label{fig:Figure 4}
+\end{figure}
+
+As seen on the following page, by not providing the school workshop to the student results in the highest utility. The optimal decision therefore would to recommend the student to not attend the school workshop. This particular use case serves to illustrate the exceptional ability of our model to arrive at optimal decisions by relying solely on probabilistic information, even in the face of incomplete knowledge about present circumstances.
+
+\vspace{5mm}
+\textbf{Case 2 - Scenario 1}
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\columnwidth] {Scenario1.png}
+  \caption{Scenario 1 with some evidence applied.}
+  \label{fig:Figure 5}
+\end{figure}
+
+In this case, the evidence points us in a clear direction towards a decision. The lack of home internet access has a negative impact on academic performance, while low attendance levels have a similar effect on school motivation. Furthermore, family income in the range of 0-350,000 and lack of family support have a negative influence on financial aid and the likelihood of dropout, respectively. Considering these factors, the utility node of a student in need of a school workshop is influenced by family income, likelihood of dropout, and the decision to attend the workshop itself. Thus, our model recommends that the student attend the workshop, which aligns with the intuitive evidence. This use case demonstrates the effectiveness of our model in making decisions that are consistent with our expectations based on the available evidence.
+
+
+\vspace{5mm}
+\textbf{Case 3 - Scenario 2}
+
+Within this use case, we invert the evidence set to test the effectiveness of our Decision Network model in recommending whether or not a student should attend school workshops. The nodes of home internet access and family support are both set to "yes," along with high attendance and a family income of 700,000+. Our model correctly recommends that the student does not need to attend the workshop, which aligns with the intuitive evidence. This demonstrates the remarkable ability of our model to make decisions that are in line with our expectations based on the available evidence.
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\columnwidth] {Scenario2.png}
+  \caption{Scenario 2 with some evidence applied.}
+  \label{fig:Figure 6}
+\end{figure}
+
+\vspace{5mm}
+\textbf{Case 4 - Scenario 3}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\columnwidth] {scenario3.png}
+  \caption{Scenario 3 with some ambiguous evidence applied.}
+  \label{fig:Figure 5}
+\end{figure}
+
+In the final use case, we deliberately set ambiguous evidence to test the Decision Network model's effectiveness in recommending whether a student should attend school workshops. 
+The nodes of home internet access is set to "yes" alongside with attendance as "high" and home support set to "no".  The family income is set to the middle value of "350 001-700 000". These factors can be seen to positively and negatively affect the likelihood of a student to drop out, but it depends on the implications of the interactions of these nodes. The derived optimal decision would thus be to recommend that the student does not attend the school workshop. Our model demonstrates the unique ability to make decisions based on probabilities, even when humans may not fully understand the implications of the evidence provided. \par
+
+\vspace{5mm}
+Therefore, our model was shown to produce accurate decisions in all four cases. It produced the expected decisions for the clear cases and was also able to make decisions for the ambiguous cases.
+
+\section{Conclusion}
+The Bayesian network model that was produced had the aim  to provide an accurate estimation of the uncertainties involved in a high school student dropping out and not completing their education. Although it is not entirely comprehensive, there are many other factors that influence the likelihood of a student dropping out, we have evidently captured the main factors identified in the literature. Further, we have extended the model to a decision network in order to identify the most suitable candidates for non-profit workshops and have shown the model to perform good decision approximations. Future research could model the network on other locales, with relevant influential factors, as the decision network has been designed to be extensible. For these reasons, we consider the BDN to be successful and useful to the intended user group.
+
+\bibliographystyle{acm}
+\bibliography{citation.bib}
+
+\end{document}
